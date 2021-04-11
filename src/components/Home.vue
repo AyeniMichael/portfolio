@@ -9,41 +9,29 @@
         <v-container class="fill-height">
           <v-row>
             <v-col cols="12" class="text-center" md="6">
-              <kinesis-container
-                ><kinesis-element :strength="15" type="depth"
-                  ><div class="display-2 font-weight-regular">
-                    Hi there,
-                  </div></kinesis-element
-                >
-                <kinesis-element :strength="20" type="depth">
-                  <div class="display-1 font-weight-regular">
-                    My name is Michael
-                  </div>
-                </kinesis-element>
-                <kinesis-element :strength="25" type="depth">
-                  <vue-typer
-                    class="typeString display-1 font-weight-light white"
-                    :text="['I conceptualize', 'I build', 'I deploy']"
-                    :shuffle="true"
-                    :type-delay="200"
-                    :pre-erase-delay="2000"
-                    caret-animation="blink"
-                    erase-style="backspace"
-                    :erase-delay="50"
-                  ></vue-typer></kinesis-element
-              ></kinesis-container>
+              <div class="display-2 font-weight-regular">Hi there,</div>
+
+              <div class="display-1 font-weight-regular">
+                My name is Michael
+              </div>
+
+              <vue-typer
+                class="typeString display-1 font-weight-light white"
+                :text="['I conceptualize', 'I build', 'I deploy']"
+                :shuffle="true"
+                :type-delay="200"
+                :pre-erase-delay="2000"
+                caret-animation="blink"
+                erase-style="backspace"
+                :erase-delay="50"
+              ></vue-typer>
             </v-col>
             <v-col cols="12" class="text-center" md="6">
-              <kinesis-container
-                ><kinesis-element :strength="15" type="depth_inv">
-                  <div class="display-1 font-weight-light">About Me</div>
-                </kinesis-element>
-                <kinesis-element :strength="15" type="depth_inv">
-                  <div class="headline font-weight-light">
-                    {{ aboutText }}
-                  </div></kinesis-element
-                ></kinesis-container
-              >
+              <div class="display-1 font-weight-light">About Me</div>
+
+              <div class="headline font-weight-light">
+                {{ aboutText }}
+              </div>
             </v-col>
           </v-row>
         </v-container>

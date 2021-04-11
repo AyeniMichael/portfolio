@@ -1,6 +1,15 @@
 <template>
   <div>
-    <v-app-bar color="rgba(255,0,0,1.0)" flat dark app>
+    <v-app-bar
+      app
+      color="rgba(255,0,0,1.0)"
+      flat
+      dark
+      outlined
+      clipped-right
+      :shrink-on-scroll="!mobile"
+      elevate-on-scroll
+    >
       <v-btn dense text rounded :to="{ name: 'HomePage' }"
         ><v-toolbar-title>{{ appTitle }}</v-toolbar-title></v-btn
       >
@@ -8,7 +17,7 @@
       <v-btn
         v-for="link in links"
         :key="link.id"
-        class="d-none d-sm-flex"
+        v-show="!mobile"
         text
         rounded
         :to="{ name: link.url }"
@@ -16,42 +25,32 @@
         {{ link.label }}
       </v-btn>
       <v-app-bar-nav-icon
-        class="d-flex d-sm-none"
-        @click="drawer = true"
+        @click="drawer = !drawer"
+        v-show="mobile"
       ></v-app-bar-nav-icon>
     </v-app-bar>
 
     <!-- SIDE NAVIGATION -->
     <v-navigation-drawer
-      color="rgba(255,0,0,0.8)"
+      :app="mobile"
+      color="rgba(255,0,0,0.5)"
       v-model="drawer"
-      absolute
+      v-show="mobile"
       dark
-      temporary
+      clipped
       right
     >
-      <v-list nav dense>
-        <v-list-item
-          v-for="link in links"
-          :key="link.id"
-          v-model="group"
-          active-class="deep-purple--text text--accent-4"
-        >
-          <v-btn text :to="{ name: link.url }"
-            ><v-list-item-icon>
-              <v-icon>{{ link.icon }}</v-icon> </v-list-item-icon
-            >{{ link.label }}</v-btn
-          >
-        </v-list-item>
-      </v-list>
+      <SideNav :hideDrawer="hideDrawer" />
     </v-navigation-drawer>
   </div>
 </template>
 
 <script>
 import { uuid } from "vue-uuid";
+import SideNav from "@/components/SideNav.vue";
 export default {
   name: "AppNav",
+  components: { SideNav },
   data: () => ({
     appTitle: "AYENI MICHAEL",
     links: [
@@ -75,12 +74,24 @@ export default {
       },
     ],
     drawer: false,
-    group: null,
   }),
-
+  computed: {
+    mobile() {
+      return this.$vuetify.breakpoint.smAndDown;
+    },
+  },
   watch: {
-    group() {
-      this.drawer = false;
+    mobile(newValue) {
+      if (newValue) {
+        this.drawer = false;
+      }
+    },
+  },
+  methods: {
+    hideDrawer() {
+      if (this.mobile) {
+        this.drawer = false;
+      }
     },
   },
 };

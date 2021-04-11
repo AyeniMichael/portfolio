@@ -12,41 +12,32 @@
         <v-container>
           <v-row justify="center">
             <v-col cols="12" md="6" sm="8">
-              <kinesis-container
-                ><kinesis-element
-                  ><v-text-field
-                    v-model="fullname"
-                    label="First Name"
-                    placeholder="Kindly enter your first name here"
-                    outlined
-                  ></v-text-field></kinesis-element
-              ></kinesis-container>
+              <v-text-field
+                v-model="fullname"
+                label="First Name"
+                placeholder="Kindly enter your first name here"
+                outlined
+              ></v-text-field>
             </v-col>
           </v-row>
           <v-row justify="center">
             <v-col cols="12" md="6" sm="8">
-              <kinesis-container
-                ><kinesis-element
-                  ><v-text-field
-                    v-model="email"
-                    label="Email"
-                    placeholder="Kindly enter your email name here"
-                    outlined
-                  ></v-text-field></kinesis-element
-              ></kinesis-container>
+              <v-text-field
+                v-model="email"
+                label="Email"
+                placeholder="Kindly enter your email name here"
+                outlined
+              ></v-text-field>
             </v-col>
           </v-row>
           <v-row justify="center">
             <v-col cols="12" md="6" sm="8">
-              <kinesis-container
-                ><kinesis-element>
-                  <v-textarea
-                    v-model="message"
-                    label="Your Message"
-                    placeholder="Kindly enter your message name here"
-                    outlined
-                  ></v-textarea></kinesis-element
-              ></kinesis-container>
+              <v-textarea
+                v-model="message"
+                label="Your Message"
+                placeholder="Kindly enter your message name here"
+                outlined
+              ></v-textarea>
             </v-col>
           </v-row>
           <v-row justify="center">
