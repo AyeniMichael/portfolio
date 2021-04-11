@@ -1,15 +1,6 @@
 <template>
   <div>
-    <v-app-bar
-      app
-      color="rgba(255,0,0,1.0)"
-      flat
-      dark
-      outlined
-      clipped-right
-      :shrink-on-scroll="!mobile"
-      elevate-on-scroll
-    >
+    <v-app-bar app color="rgba(255,0,0,1.0)" flat dark outlined clipped-right>
       <v-btn dense text rounded :to="{ name: 'HomePage' }"
         ><v-toolbar-title>{{ appTitle }}</v-toolbar-title></v-btn
       >
