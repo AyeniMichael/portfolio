@@ -44,7 +44,7 @@ export default {
     ],
   }),
   props: {
-    hidedrawer: Function,
+    hideDrawer: Function,
   },
 };
 </script>
