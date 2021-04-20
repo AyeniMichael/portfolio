@@ -35,6 +35,7 @@
               <v-btn
                 type="submit"
                 :href="work.link"
+                target="blank"
                 color="rgba(255,0,0,1.0)"
                 dark
               >

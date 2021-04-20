@@ -10,6 +10,7 @@
           rounded
           class="my-2"
           :href="item.link"
+          target="blank"
         >
           <kinesis-container
             ><kinesis-element>
