@@ -7,7 +7,8 @@
         @click="hideDrawer"
         active-class="deep-purple--text text--accent-4"
       >
-        <v-btn text :to="{ name: link.url }"
+      <v-icon></v-icon>
+        <v-btn text :href="link.url"
           ><v-list-item-icon>
             <v-icon>{{ link.icon }}</v-icon> </v-list-item-icon
           >{{ link.label }}</v-btn
@@ -26,19 +27,19 @@ export default {
       {
         id: uuid.v4(),
         label: "Home",
-        url: "HomePage",
+        url: "#home",
         icon: "mdi-home",
       },
       {
         id: uuid.v4(),
         label: "Works",
-        url: "Works",
+        url: "#works",
         icon: "mdi-wallet-travel",
       },
       {
         id: uuid.v4(),
         label: "Contact",
-        url: "ContactPage",
+        url: "#contact",
         icon: "mdi-cellphone-iphone",
       },
     ],

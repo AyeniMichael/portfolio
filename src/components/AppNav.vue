@@ -1,20 +1,27 @@
 <template>
   <div>
     <v-app-bar app color="rgba(255,0,0,1.0)" flat dark outlined clipped-right>
-      <v-btn dense text rounded :to="{ name: 'HomePage' }"
-        ><v-toolbar-title>{{ appTitle }}</v-toolbar-title></v-btn
+      <v-toolbar-title>
+        <a
+          class="white--text font-weight-regular"
+          @click="$vuetify.goTo(links[0].url)"
+        >
+          {{ appTitle }}</a
+        ></v-toolbar-title
       >
       <v-spacer></v-spacer>
-      <v-btn
+      <v-card-subtitle
         v-for="link in links"
         :key="link.id"
         v-show="!mobile"
         text
         rounded
-        :to="{ name: link.url }"
       >
-        {{ link.label }}
-      </v-btn>
+        <a class="white--text" @click="$vuetify.goTo(link.url)">
+          <v-icon class="mr-1">{{ link.icon }}</v-icon
+          >{{ link.label }}</a
+        >
+      </v-card-subtitle>
       <v-app-bar-nav-icon
         @click="drawer = !drawer"
         v-show="mobile"
@@ -24,13 +31,17 @@
     <!-- SIDE NAVIGATION -->
     <v-navigation-drawer
       :app="mobile"
-      color="rgba(255,0,0,0.5)"
+      color="rgba(255,0,0,0.9)"
       v-model="drawer"
       v-show="mobile"
       dark
       clipped
       right
     >
+      <v-row justify="end" class="pa-5">
+        <v-icon @click="drawer = false">mdi-close</v-icon>
+      </v-row>
+
       <SideNav :hideDrawer="hideDrawer" />
     </v-navigation-drawer>
   </div>
@@ -47,20 +58,20 @@ export default {
     links: [
       {
         id: uuid.v4(),
-        label: "Home",
-        url: "HomePage",
+        label: "HOME",
+        url: "#home",
         icon: "mdi-home",
       },
       {
         id: uuid.v4(),
-        label: "Works",
-        url: "Works",
+        label: "WORKS",
+        url: "#works",
         icon: "mdi-wallet-travel",
       },
       {
         id: uuid.v4(),
-        label: "Contact",
-        url: "ContactPage",
+        label: "CONTACT",
+        url: "#contact",
         icon: "mdi-cellphone-iphone",
       },
     ],

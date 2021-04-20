@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="home">
     <v-card dark flat>
       <v-img
         height="100vh"
@@ -17,17 +17,20 @@
 
               <vue-typer
                 class="typeString display-1 font-weight-light white"
-                :text="['I conceptualize', 'I build', 'I deploy']"
+                :text="['Conceptualize', 'Build', 'Deploy']"
                 :shuffle="true"
                 :type-delay="200"
                 :pre-erase-delay="2000"
                 caret-animation="blink"
+                initial-action="typing"
                 erase-style="backspace"
                 :erase-delay="50"
               ></vue-typer>
             </v-col>
             <v-col cols="12" class="text-center" md="6">
-              <div class="display-1 font-weight-light">About Me</div>
+              <div class="display-1 font-weight-light" md="font-weight-regular">
+                About Me
+              </div>
 
               <div class="headline font-weight-light">
                 {{ aboutText }}
@@ -45,18 +48,18 @@
 export default {
   name: "Home",
   data: () => ({
-    aboutText: `I am the main man, I am the tech guy, I'm the guy you call when you want to get something done. 
-    I'm into web development using primarily Vue.js among other languages and tools.
-    You can hit me up through the contact link if you need my services`,
+    aboutText: `My name is Ayeni Michael Abiodun and I am Frontend Web Developer. 
+    I develop aesthetic websites using javascript(ES6, ES7 syntax), VueJs, Vuetify and Firebase. 
+    You can click the contact link in the menu bar if you need my services or my expertise`,
   }),
 };
 </script>
 
 <style scoped>
-.home {
+/* .home {
   background: url(/landingbackground.jpg);
   background-size: cover;
-}
+} */
 
 /* .typeString {
   color: white;

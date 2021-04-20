@@ -1,9 +1,11 @@
 <template>
-  <div>
-    <v-container>
+  <div id="works">
+    <v-container pt-15>
       <v-row justify="center">
-        <v-col cols="6">
-          <div class="text-center display-2 font-weight-regular">My Works</div>
+        <v-col cols="12">
+          <div class="text-center display-1 font-weight-regular white--text">
+            Here are my Projects
+          </div>
         </v-col>
       </v-row>
       <v-row justify="center">
@@ -11,8 +13,9 @@
           <v-card>
             <v-img
               height="15rem"
+              contain
               :src="work.image"
-              gradient="to top, rgba(0,0,0,.24), rgba(0,0,0,.24)"
+              gradient="to top, rgba(0,0,0,.14), rgba(0,0,0,.14)"
             >
             </v-img>
             <v-card-title class="display-1 font-weight-regular mb-3"
@@ -106,4 +109,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+#works {
+  /* background: url(/landingbackground.jpg);
+  background-size: cover; */
+  background-color: rgba(0, 0, 0, 0.6);
+}
+</style>
